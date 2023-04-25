@@ -1,6 +1,6 @@
 package OtherUnits;
 
-public class Crossbowman extends Unit{
+public class Crossbowman extends Unit {
 
     int accuracy, currentBullets, maxBullets;
 
@@ -14,10 +14,23 @@ public class Crossbowman extends Unit{
 
     @Override
     public String toString(){
-        return "Class = Crossbowman" + ", " + "name = " + name;
+        return "Crossbowman";
     }
 
     public void shot(){
+        
+    }
+
+    @Override
+    public String getInfo(){
+        return super.getInfo() + ", " +
+        "accuracy = " + accuracy + ", " +
+        "currentBullets = " + currentBullets + ", "+
+        "maxBullets = " + maxBullets;
+    }
+
+    @Override
+    public void step(){
         
     }
 }

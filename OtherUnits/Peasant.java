@@ -1,6 +1,6 @@
 package OtherUnits;
 
-public class Peasant extends Unit{
+public class Peasant extends Unit {
     
     public Peasant(String name, int hp, int luck, int speed, int level, int force){
         super(name, hp, luck, speed, level, force);
@@ -8,6 +8,16 @@ public class Peasant extends Unit{
 
     @Override
     public String toString(){
-        return "Class = Peasant" + ", " + "name = " + name;
+        return "Peasant";
+    }
+
+    @Override
+    public String getInfo(){
+        return super.getInfo();
+    }
+
+    @Override
+    public void step(){
+        
     }
 }

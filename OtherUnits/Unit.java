@@ -1,6 +1,6 @@
 package OtherUnits;
 
-public class Unit{
+public abstract class Unit implements GameInterface{
     String name;
     int hp, luck, speed, level, force;
 
@@ -28,4 +28,20 @@ public class Unit{
     public void move(){
         
     }
+
+    @Override
+    public String getInfo(){
+        return "name = " + name + ", " +
+        "hp = " + hp + ", "+
+        "Luck = " + luck + ", "+
+        "speed = " + speed + ", "+
+        "level = " + level + ", "+
+        "force = " + force;
+    }
+
+    @Override
+    public void step(){
+        
+    }
+        
 }

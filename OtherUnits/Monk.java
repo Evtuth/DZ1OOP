@@ -1,6 +1,6 @@
 package OtherUnits;
 
-public class Monk extends Unit{
+public class Monk extends Unit {
 
     int mana, accuracy;
 
@@ -12,10 +12,22 @@ public class Monk extends Unit{
 
     @Override
     public String toString(){
-        return "Class = Monk" + ", " + "name = " + name;
+        return "Monk";
     }
 
     public void heal(){
+        
+    }
+
+    @Override
+    public String getInfo(){
+        return super.getInfo() + ", "+
+        "accuracy = " + accuracy + ", "+
+        "mana = " + mana;
+    }
+
+    @Override
+    public void step(){
         
     }
 }

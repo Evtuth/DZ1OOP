@@ -10,6 +10,17 @@ public class Sniper extends Crossbowman {
 
     @Override
     public String toString(){
-        return "Class = Sniper" + ", " + "name = " + name;
+        return "Sniper";
+    }
+
+    
+    @Override
+    public String getInfo(){
+        return super.getInfo();
+    }
+
+    @Override
+    public void step(){
+        
     }
 }

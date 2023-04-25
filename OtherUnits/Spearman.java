@@ -8,6 +8,16 @@ public class Spearman extends Peasant {
 
     @Override
     public String toString(){
-        return "Class = Spearman" + ", " + "name = " + name;
+        return "Spearman";
+    }
+
+    @Override
+    public String getInfo(){
+        return super.getInfo();
+    }
+
+    @Override
+    public void step(){
+        
     }
 }
