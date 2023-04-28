@@ -27,6 +27,7 @@ public class Wizard extends Monk{
         for(int i = 0; i < team.size(); i ++){
             if(team.get(i).getHp() != team.get(i).getMaxHp()){
                 if((team.get(i).getMaxHp() - team.get(i).getHp()) <= min){
+                    min = (team.get(i).getMaxHp() - team.get(i).getHp());
                     indexPerson = i;
                 }
         if((team.get(indexPerson).getMaxHp() - team.get(indexPerson).getHp()) >= healpoint){
