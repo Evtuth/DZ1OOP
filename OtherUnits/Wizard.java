@@ -1,7 +1,7 @@
 package OtherUnits;
 import java.util.*;
 
-public class Wizard extends Monk implements GameInterface{
+public class Wizard extends Monk{
     
     
     public Wizard(ArrayList <Unit> team, String name, int hp, int luck, int inic, int level, int force, int maxHp, int mana, int accuracy){

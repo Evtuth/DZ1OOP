@@ -90,10 +90,10 @@ public class Game {
         wizard.step();
         wizard2.step();
 
-        // ArrayList <Unit> teamInic = new ArrayList<>(team1);
-        // teamInic.addAll(team2);        
-        // Collections.sort(teamInic);
-        // System.out.println("TeamInic:");
-        // teamInic.forEach(n -> System.out.println(n.getInfo()));
+        ArrayList <Unit> teamInic = new ArrayList<>(team1);
+        teamInic.addAll(team2);        
+        Collections.sort(teamInic);
+        System.out.println("TeamInic:");
+        teamInic.forEach(n -> System.out.println(n.getInfo()));
     }
 }
