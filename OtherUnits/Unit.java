@@ -1,16 +1,22 @@
 package OtherUnits;
+import java.util.*;
 
-public abstract class Unit implements GameInterface{
+public abstract class Unit implements GameInterface, Comparable<Unit>{
     String name;
-    int hp, luck, speed, level, force;
+    int hp, luck, inic, level, force, maxHp;
+    ArrayList <Unit> team;
+    
 
-    public Unit(String name, int hp, int luck, int speed, int level, int force){
+    public Unit(ArrayList <Unit> team, String name, int hp, int luck, int inic, int level, int force, int maxHp){
+        this.team = team;
         this.hp = hp;
         this.luck = luck;
-        this.speed = speed;
+        this.inic = inic;
         this.level = level;
         this.force = force;
         this.name = name;
+        this.maxHp = maxHp;
+        
     }
 
     public void attack(){
@@ -29,12 +35,29 @@ public abstract class Unit implements GameInterface{
         
     }
 
+    public int getHp(){
+        return hp;
+    }
+
+    public int getMaxHp(){
+        return maxHp;
+    }
+
+    public int getInic() {
+        return inic;
+    }
+
+    @Override
+    public int compareTo(Unit o) {
+        return  o.getInic() - this.inic;
+    }
+
     @Override
     public String getInfo(){
         return "name = " + name + ", " +
         "hp = " + hp + ", "+
         "Luck = " + luck + ", "+
-        "speed = " + speed + ", "+
+        "inic = " + inic + ", "+
         "level = " + level + ", "+
         "force = " + force;
     }

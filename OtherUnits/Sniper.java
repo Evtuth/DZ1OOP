@@ -1,10 +1,11 @@
 package OtherUnits;
+import java.util.*;
 
 public class Sniper extends Crossbowman {
     
-    public Sniper(String name, int hp, int luck, int speed, int level, 
-    int force, int accuracy, int currentBullets, int maxBullets ){
-        super(name, hp, luck, speed, level, force, accuracy, currentBullets, maxBullets);
+    public Sniper(ArrayList <Unit> team, String name, int hp, int luck, int inic, int level, 
+    int force, int maxHp, int accuracy, int currentBullets, int maxBullets ){
+        super(team, name, hp, luck, inic, level, force, maxHp, accuracy, currentBullets, maxBullets);
         
     }
 

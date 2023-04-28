@@ -1,11 +1,12 @@
 package OtherUnits;
+import java.util.*;
 
 public class Monk extends Unit {
 
     int mana, accuracy;
 
-    public Monk(String name, int hp, int luck, int speed, int level, int force, int mana, int accuracy){
-        super(name, hp, luck, speed, level, force);
+    public Monk(ArrayList <Unit> team, String name, int hp, int luck, int inic, int level, int force, int maxHp, int mana, int accuracy){
+        super(team, name, hp, luck, inic, level, force, maxHp);
         this.mana = mana;
         this.accuracy = accuracy;
     }
@@ -15,10 +16,7 @@ public class Monk extends Unit {
         return "Monk";
     }
 
-    public void heal(){
-        
-    }
-
+    
     @Override
     public String getInfo(){
         return super.getInfo() + ", "+

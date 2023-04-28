@@ -1,12 +1,13 @@
 package OtherUnits;
+import java.util.*;
 
 public class Crossbowman extends Unit {
 
     int accuracy, currentBullets, maxBullets;
 
-    public Crossbowman(String name, int hp, int luck, int speed, int level, 
-    int force, int accuracy, int currentBullets, int maxBullets ){
-        super(name, hp, luck, speed, level, force);
+    public Crossbowman(ArrayList <Unit> team, String name, int hp, int luck, int inic, int level, 
+    int force, int maxHp, int accuracy, int currentBullets, int maxBullets ){
+        super(team, name, hp, luck, inic, level, force, maxHp);
         this.accuracy = accuracy;
         this.currentBullets = currentBullets;
         this.maxBullets = maxBullets;
@@ -33,4 +34,6 @@ public class Crossbowman extends Unit {
     public void step(){
         
     }
+
+    
 }

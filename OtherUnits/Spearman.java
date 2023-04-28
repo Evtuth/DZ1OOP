@@ -1,9 +1,10 @@
 package OtherUnits;
+import java.util.*;
 
 public class Spearman extends Peasant {
 
-    public Spearman(String name, int hp, int luck, int speed, int level, int force){
-        super(name, hp, luck, speed, level, force);
+    public Spearman(ArrayList <Unit> team, String name, int hp, int luck, int inic, int level, int force, int maxHp){
+        super(team, name, hp, luck, inic, level, force, maxHp);
     }
 
     @Override
