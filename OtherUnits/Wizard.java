@@ -4,8 +4,9 @@ import java.util.*;
 public class Wizard extends Monk{
     
     
-    public Wizard(ArrayList <Unit> team, String name, int hp, int luck, int inic, int level, int force, int maxHp, int mana, int accuracy){
-        super(team, name, hp, luck, inic, level, force, maxHp, mana, accuracy);
+    public Wizard(ArrayList <Unit> team, String state, String name, int hp, int luck, 
+    int inic, int level, int force, int maxHp, int x, int y, int mana, int accuracy){
+        super(team, state, name, hp, luck, inic, level, force, maxHp, x, y, mana, accuracy);
         
     }
 
@@ -20,7 +21,7 @@ public class Wizard extends Monk{
     }
 
     @Override
-    public void step(){
+    public void step(ArrayList <Unit> ownTeam, ArrayList <Unit> opposingTeam){
         int indexPerson = 0;
         int min = 1000;
         int healpoint = new Random().nextInt(force+1);

@@ -2,13 +2,16 @@ package OtherUnits;
 import java.util.*;
 
 public abstract class Unit implements GameInterface, Comparable<Unit>{
-    String name;
+    String name, state;
     int hp, luck, inic, level, force, maxHp;
     ArrayList <Unit> team;
+    protected Coordinates coordinates;
     
 
-    public Unit(ArrayList <Unit> team, String name, int hp, int luck, int inic, int level, int force, int maxHp){
+    public Unit(ArrayList <Unit> team, String state, String name, int hp, int luck, 
+    int inic, int level, int force, int maxHp, int x, int y){
         this.team = team;
+        this.state = state;
         this.hp = hp;
         this.luck = luck;
         this.inic = inic;
@@ -16,7 +19,7 @@ public abstract class Unit implements GameInterface, Comparable<Unit>{
         this.force = force;
         this.name = name;
         this.maxHp = maxHp;
-        
+        this.coordinates = new Coordinates(x, y);
     }
 
     public void attack(){
@@ -39,11 +42,15 @@ public abstract class Unit implements GameInterface, Comparable<Unit>{
         return hp;
     }
 
+    public String getState(){
+        return state;
+    }
+
     public int getMaxHp(){
         return maxHp;
     }
 
-    public int getInic() {
+        public int getInic() {
         return inic;
     }
 
@@ -51,6 +58,7 @@ public abstract class Unit implements GameInterface, Comparable<Unit>{
     public int compareTo(Unit o) {
         return  o.getInic() - this.inic;
     }
+
 
     @Override
     public String getInfo(){
@@ -63,7 +71,7 @@ public abstract class Unit implements GameInterface, Comparable<Unit>{
     }
 
     @Override
-    public void step(){
+    public void step(ArrayList <Unit> ownTeam, ArrayList <Unit> opposingTeam){
         
     }
         

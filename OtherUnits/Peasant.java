@@ -3,8 +3,9 @@ import java.util.*;
 
 public class Peasant extends Unit {
     
-    public Peasant(ArrayList <Unit> team, String name, int hp, int luck, int inic, int level, int force, int maxHp){
-        super(team, name, hp, luck, inic, level, force, maxHp);
+    public Peasant(ArrayList <Unit> team, String state, String name, int hp, int luck, 
+    int inic, int level, int force, int maxHp, int x, int y){
+        super(team, state, name, hp, luck, inic, level, force, maxHp, x, y);
     }
 
     @Override
@@ -18,7 +19,7 @@ public class Peasant extends Unit {
     }
 
     @Override
-    public void step(){
+    public void step(ArrayList <Unit> ownTeam, ArrayList <Unit> opposingTeam){
         
     }
 

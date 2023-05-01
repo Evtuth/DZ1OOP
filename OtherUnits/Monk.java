@@ -5,8 +5,9 @@ public class Monk extends Unit {
 
     int mana, accuracy;
 
-    public Monk(ArrayList <Unit> team, String name, int hp, int luck, int inic, int level, int force, int maxHp, int mana, int accuracy){
-        super(team, name, hp, luck, inic, level, force, maxHp);
+    public Monk(ArrayList <Unit> team, String state, String name, int hp, int luck, 
+    int inic, int level, int force, int maxHp, int x, int y, int mana, int accuracy){
+        super(team, state, name, hp, luck, inic, level, force, maxHp, x, y);
         this.mana = mana;
         this.accuracy = accuracy;
     }
@@ -25,7 +26,7 @@ public class Monk extends Unit {
     }
 
     @Override
-    public void step(){
+    public void step(ArrayList <Unit> ownTeam, ArrayList <Unit> opposingTeam){
         
     }
 }
