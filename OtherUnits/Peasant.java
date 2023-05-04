@@ -20,7 +20,11 @@ public class Peasant extends Unit {
 
     @Override
     public void step(ArrayList <Unit> ownTeam, ArrayList <Unit> opposingTeam){
-        
+        if(hp > 0 && state == "free") {
+            System.out.println("Peasant carries bullets!!!");
+        } else {
+            System.out.println("Peasant is busy!!!");
+        }
     }
 
     
