@@ -50,6 +50,10 @@ public abstract class Unit implements GameInterface, Comparable<Unit>{
         return maxHp;
     }
 
+    public int[] getCoords(){
+        return new int[]{coordinates.x, coordinates.y};
+    }
+
         public int getInic() {
         return inic;
     }

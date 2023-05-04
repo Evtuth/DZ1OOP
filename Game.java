@@ -4,12 +4,12 @@ import java.util.*;
 import OtherUnits.*;
 
 public class Game {
-    
-    public static void main(String[] args) {
 
-        ArrayList <Unit> team1 = new ArrayList<>();
-        ArrayList <Unit> team2 = new ArrayList<>();
-        
+    public static ArrayList <Unit> team1 = new ArrayList<>();
+    public static ArrayList <Unit> team2 = new ArrayList<>();
+    public static ArrayList <Unit> teamInic = new ArrayList<>();
+
+    public static void main(String[] args) {            
 
         Peasant peasant = new Peasant(team1, "free", "Ivan",100,1,9,1,5, 120,1, 1);
         Robber robber = new Robber(team1, "free","Valira",120,3,12,1,7, 120,1, 2);
@@ -79,26 +79,39 @@ public class Game {
             }
         }
 
-        System.out.println(team1);
-        System.out.println(team2);
+        // System.out.println(team1);
+        // System.out.println(team2);
 
-        System.out.println("Team1:");
-        team1.forEach(n -> System.out.println(n.getInfo()));
-        System.out.println("Team2:");
-        team2.forEach(n -> System.out.println(n.getInfo()));
+        // System.out.println("Team1:");
+        // team1.forEach(n -> System.out.println(n.getInfo()));
+        // System.out.println("Team2:");
+        // team2.forEach(n -> System.out.println(n.getInfo()));
         
-        wizard.step(team1, team2);
-        wizard2.step(team1, team2);
+        // wizard.step(team1, team2);
+        // wizard2.step(team1, team2);
 
-        ArrayList <Unit> teamInic = new ArrayList<>(team1);
+        teamInic.addAll(team1);
         teamInic.addAll(team2);        
         Collections.sort(teamInic);
-        System.out.println("TeamInic:");
-        teamInic.forEach(n -> System.out.println(n.getInfo()));
+        // System.out.println("TeamInic:");
+        // teamInic.forEach(n -> System.out.println(n.getInfo()));
 
-        crossbowman.step(team1, team2);
-        crossbowman2.step(team2, team1);
-        sniper.step(team1, team2);
-        sniper2.step(team2, team1);
+        // crossbowman.step(team1, team2);
+        // crossbowman2.step(team2, team1);
+        // sniper.step(team1, team2);
+        // sniper2.step(team2, team1);
+
+        Scanner in = new Scanner(System.in);
+        while (true) {
+            View.view();
+            in.nextLine();
+            for(Unit player: teamInic) {
+                if(team1.contains(player)) {
+                    player.step(team1, team2);
+                } else {
+                    player.step(team2, team1);
+                }
+            }
+        }
     }
 }
