@@ -24,6 +24,28 @@ public class Robber extends Peasant {
 
     @Override
     public void step(ArrayList <Unit> ownTeam, ArrayList <Unit> opposingTeam){
-        
+        if(hp > 0 && state == "free"){
+            float minDistance = 2;
+            Unit target = null;
+            for (Unit n : opposingTeam) {
+                float tmp = n.coordinates.getDistance(this.coordinates);
+                if(tmp < minDistance && n.state != "die"){
+                    minDistance = tmp;
+                    target = n;
+                }
+            }
+            if(target != null){
+                System.out.println(name + " from own team" + " attaks at " + target.name + " from opposing team!!!");
+            }
+            else{
+                if(this.coordinates.x > 5 ){
+                    this.coordinates.x--;
+                }
+                if(this.coordinates.x >= 1 && this.coordinates.x < 5){
+                    this.coordinates.x++;
+                }
+                System.out.println(name + " from own team moved!!!");
+            }
+        }
     }
 }
