@@ -41,7 +41,7 @@ public class Robber extends Peasant {
                 if(this.coordinates.x > 5 ){
                     this.coordinates.x--;
                 }
-                if(this.coordinates.x >= 1 && this.coordinates.x < 5){
+                if(this.coordinates.x < 5){
                     this.coordinates.x++;
                 }
                 System.out.println(name + " from own team moved!!!");
